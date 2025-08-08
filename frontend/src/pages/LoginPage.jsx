@@ -116,7 +116,7 @@ const LoginPage = () => {
 
       <AuthImagePattern
         title={"Welcome back !"}
-        imageUrl="../../public/loginpage.jpg"
+        imageUrl="/loginpage.jpg"
       />
     </div>
   );
