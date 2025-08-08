@@ -27,14 +27,22 @@ app.use(cors({
     credentials: true,
 }));
 
-app.use("/api/auth", authRoutes)
-app.use("/api/messages",messageRoutes);
+console.log("Loading /api/auth...");
+app.use("/api/auth", authRoutes);
+
+console.log("Loading /api/messages...");
+app.use("/api/messages", messageRoutes);
+
+console.log("Loading /api/groups...");
 app.use("/api/groups", groupRoutes);
+
+console.log("All routes mounted successfully");
+
 
 if(process.env.NODE_ENV === "production"){
     app.use(express.static(path.join(__dirname, '../frontend/dist')));
 
-    app.get('/*', (req, res) => {
+    app.get('*', (req, res) => {
         res.sendFile(path.join(__dirname, "../frontend","dist","index.html"));
     });
 }
