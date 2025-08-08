@@ -1,4 +1,4 @@
-
+    
 import express from 'express';
 import dotenv from 'dotenv';
 import cookieParser from 'cookie-parser';
@@ -45,7 +45,7 @@ if(process.env.NODE_ENV === "production"){
     });
 }
 
-server.listen(5001,() => {
+server.listen(PORT,() => {
     console.log('Server is running on port:'+ PORT);
     connectDB();
 });
